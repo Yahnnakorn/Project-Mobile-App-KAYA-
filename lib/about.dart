@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pro/main.dart';
 
 void main() {
   runApp(const FigmaToCodeApp());
@@ -39,7 +40,7 @@ class AboutKaya extends StatelessWidget {
             children: [
               Positioned(
                 left: 0,
-                top: 0,
+                top: 24,
                 child: Container(
                   width: screenWidth,
                   height: 103,
@@ -48,7 +49,7 @@ class AboutKaya extends StatelessWidget {
               ),
               Positioned(
                 left: 30,
-                top: 14,
+                top: 24,
                 child: SizedBox(
                   width: 63,
                   height: 24,
@@ -72,9 +73,16 @@ class AboutKaya extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         left: 18,
-                        top: 4,
+                        top: 10,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => CustomWidget()),
+                            );
+                          },
                         child: Text(
                           'MENU',
                           style: TextStyle(
@@ -84,6 +92,7 @@ class AboutKaya extends StatelessWidget {
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w600,
                           ),
+                        ),
                         ),
                       ),
                     ],
@@ -111,7 +120,7 @@ class AboutKaya extends StatelessWidget {
               ),
               const Positioned(
                 left: 20,
-                top: 120,
+                top: 136,
                 child: Text(
                   'KAYA คืออะไร ?',
                   style: TextStyle(
@@ -125,7 +134,7 @@ class AboutKaya extends StatelessWidget {
               ),
               Positioned(
                 left: 20,
-                top: 152,
+                top: 170,
                 child: SizedBox(
                   width: screenWidth - 40,
                   child: const Text(

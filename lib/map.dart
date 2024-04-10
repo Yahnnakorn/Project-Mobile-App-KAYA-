@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pro/main.dart';
 
 void main() {
   runApp(const FigmaToCodeApp());
@@ -73,18 +74,26 @@ class TrashMap extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         left: 18,
                         top: 4,
-                        child: Text(
-                          'MENU',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w600,
-                            height: 1.0, 
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => CustomWidget()),
+                            );
+                          },
+                          child: Text(
+                            'MENU',
+                            style: TextStyle(
+                              decoration: TextDecoration.none,
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w600,
+                              height: 1.0, 
+                            ),
                           ),
                         ),
                       ),

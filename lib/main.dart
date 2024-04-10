@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pro/Trash_info.dart';
+import 'information/common.dart';
 import 'map.dart';
 import 'about.dart';
 
@@ -19,6 +21,7 @@ class FigmaToCodeApp extends StatelessWidget {
         '/': (context) => const CustomWidget(),
         '/map': (context) => const TrashMap(),
         '/about': (context) => const AboutKaya(),
+        '/information':(context) => TrashInformation(),
       },
       initialRoute: '/',
     );
@@ -94,10 +97,14 @@ class CustomWidget extends StatelessWidget {
                   Positioned(
                     left: 20,
                     top: 240,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 40,
-                      height: 60,
-                      decoration: ShapeDecoration(
+                    child: GestureDetector(
+                      // onTap: () {
+                      //   Navigator.pushNamed(context, '/information');
+                      // },
+                      child: Container(
+                       width: MediaQuery.of(context).size.width - 40,
+                       height: 60,
+                       decoration: ShapeDecoration(
                         color: const Color(0xFFD9D9D9),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -115,10 +122,15 @@ class CustomWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                   ),
                   ),
                   Positioned(
                     left: 20,
                     top: 330,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/information');
+                      },
                     child: Container(
                       width: MediaQuery.of(context).size.width - 40,
                       height: 60,
@@ -140,6 +152,7 @@ class CustomWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                   ),
                   ),
                   Positioned(
                     left: 20,
